@@ -95,6 +95,26 @@ function AnimalCatalogo() {
         </ul>
         {/* formulario: inputs controlados con form/setForm + botón que llama a enviarComentario */}
         {errorForm && <p style={{ color: 'red' }}>{errorForm}</p>}
+        <input
+          type="text"
+          placeholder="Autor"
+          value={form.autor}
+          onChange={(e) => setForm({ ...form, autor: e.target.value })}
+        />
+        <input
+          type="number"
+          placeholder="Calificación"
+          min="1"
+          max="5"
+          value={form.calificacion}
+          onChange={(e) => setForm({ ...form, calificacion: e.target.value })}
+        />
+        <textarea
+          placeholder="Comentario"
+          value={form.comentario}
+          onChange={(e) => setForm({ ...form, comentario: e.target.value })}
+        />
+        <button onClick={enviarComentario}>Enviar Comentario</button>
       </div>
     )}
   </div>
